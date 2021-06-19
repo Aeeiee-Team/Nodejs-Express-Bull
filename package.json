@@ -1,0 +1,28 @@
+{
+  "name": "nodejs-express-kue",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aeeiee-Team/Nodejs-Express-Kue.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Aeeiee-Team/Nodejs-Express-Kue/issues"
+  },
+  "homepage": "https://github.com/Aeeiee-Team/Nodejs-Express-Kue#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "kue": "^0.11.6",
+    "mongoose": "^5.12.14",
+    "nodemon": "^2.0.7",
+    "redis": "^3.1.2"
+  }
+}
