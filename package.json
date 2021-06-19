@@ -18,11 +18,15 @@
   },
   "homepage": "https://github.com/Aeeiee-Team/Nodejs-Express-Kue#readme",
   "dependencies": {
+    "@sendgrid/mail": "^7.4.5",
+    "body-parser": "^1.19.0",
+    "bull": "^3.22.8",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
-    "kue": "^0.11.6",
+    "mailgen": "^2.0.14",
     "mongoose": "^5.12.14",
     "nodemon": "^2.0.7",
-    "redis": "^3.1.2"
+    "redis": "^3.1.2",
+    "twilio": "^3.64.0"
   }
 }
