@@ -1,15 +1,16 @@
 const { successResponse, errorHelper } = require("../helpers/response");
 const models = require("../../database/models");
-const { welcomeEmail } = require("../helpers/welcomeEmail");
-const { sendText } = require("../helpers/twilio");
+
+const { createJob } = require("../Jobs/bullConfig");
 
 async function createUser(req, res) {
 	try {
 		const user = await models.User.create(req.body);
-		welcomeEmail(user.firstName, user.lastName, user.email);
-		sendText(user.firstName, user.phoneNumber);
+		createJob("Welcome email", { ...user });
+		createJob("Send Text", { ...user });
 		return successResponse(res, 201, "User Registered Successfully", user);
 	} catch (error) {
+		console.log(error);
 		return errorHelper(res, 500, error);
 	}
 }
