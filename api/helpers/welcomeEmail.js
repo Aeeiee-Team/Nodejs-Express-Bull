@@ -6,10 +6,6 @@ const sgMail = require("@sendgrid/mail");
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 function welcomeEmail(job, done) {
-	
-	console.log('hi')
-	console.log(job._doc)
-	const data = job._doc;
 	const mailGenerator = new Mailgen({
 		theme: "default",
 		product: {
@@ -19,12 +15,12 @@ function welcomeEmail(job, done) {
 	});
 	const mail = {
 		body: {
-			name: `${data.firstName} ${data.lastName}`,
+			name: `${job.firstName} ${job.lastName}`,
 			intro: "Welcome to Aeeiee! We're very excited to have you on board.",
 			action: {
 				instructions: "To get started with Aeeiee, please click here:",
 				button: {
-					color: "#22BC66", 
+					color: "#22BC66",
 					text: "Checkout our Website",
 					link: `https://aeeiee.com`,
 				},
@@ -38,7 +34,7 @@ function welcomeEmail(job, done) {
 	const emailText = mailGenerator.generatePlaintext(mail);
 
 	const mailOption = {
-		to: data.email,
+		to: job.email,
 		from: `${process.env.SENDERS_EMAIL}`,
 		subject: "Welcome to Aeeiee",
 		html: emailBody,

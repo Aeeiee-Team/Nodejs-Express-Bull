@@ -6,13 +6,11 @@ const authToken = process.env.TWILIO_AUTH_TOKEN;
 const client = require("twilio")(accountSid, authToken);
 
 async function sendText(job, done) {
-	console.log(job._doc);
-	const data = job._doc;
 	try {
 		await client.messages.create({
-			body: `Welcome to  Aeeiee, ${data.firstName}`,
+			body: `Welcome to  Aeeiee, ${job.firstName}`,
 			from: `${process.env.MESSAGING}`,
-			to: `${data.phoneNumber}`,
+			to: `${job.phoneNumber}`,
 		});
 
 		return done();
