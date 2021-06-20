@@ -25,7 +25,6 @@ $ npm install
 
 Create a `.env` file and add the environment variables described in the .env.sample file. Below are the relevant environment variables worth adding:
 
-- `JWT_Secret` - JWT secret for signing access token.
 - `DATA_DB` - Connection string for monogodb database (development environment).
 - `SENDGRID_API_KEY` - Sendgrid API key for sending reset password email notification.
 - `SENDERS_EMAIL` - Email that has gone through the single sender verification and will show as the sender's email
